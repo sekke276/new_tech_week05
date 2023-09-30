@@ -1,0 +1,21 @@
+
+<h2>Blog Posts</h2>
+<form method="get" action="/new-post">
+    <button type="submit">New Post</button>
+</form>
+
+<ul>
+    {{#each posts}}
+        <li>
+            <a href="/post/{{this.id}}">{{this.title}}</a>
+            <form method="POST" action="/post/{{this.id}}/delete">
+                <button class="delete-post" type="submit" data-id="{{this.id}}">Delete</button>
+            </form>
+            
+             <form method="get" action="/post/{{this.id}}/update">
+                <button class="delete-post" type="submit" data-id="{{this.id}}">Edit</button>
+            </form>
+
+        </li>
+    {{/each}}
+</ul>
